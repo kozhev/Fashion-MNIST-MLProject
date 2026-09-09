@@ -1,0 +1,8 @@
+.venv/
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+
+# Dataset is large; download archive.zip from Kaggle and let the notebook extract it
+data/*.csv
+archive.zip
