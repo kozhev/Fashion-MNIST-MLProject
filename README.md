@@ -22,8 +22,6 @@ dataset: 28×28 greyscale clothing images sorted into 10 categories.
 
 Quality metric: **macro-average F1**.
 
-No ready-made scikit-learn classifier is used. scikit-learn appears only as a
-utility library — `PCA` for dimensionality reduction and `metrics` for scoring.
 
 ## Setup
 
@@ -32,17 +30,6 @@ python -m venv .venv
 .venv\Scripts\pip install -r requirements.txt
 ```
 
-Download the dataset from Kaggle (it arrives as `archive.zip`) and put it in the
-project root. The notebook extracts `data/fashion-mnist_train.csv` and
-`data/fashion-mnist_test.csv` from it on first run, so there is no separate setup
-step. The two files are already split into train and test and are never merged or
-re-split.
-
-> Use the CSVs from the Kaggle archive specifically. Fashion-MNIST is
-> redistributed elsewhere with a **different train/test partition** of the same
-> 70,000 images, and mixing sources silently puts test images into the training
-> set.
-
 ## Running
 
 ```bash
@@ -50,15 +37,13 @@ re-split.
 ```
 
 The notebook runs the whole flow: loading, feature engineering, the grid search,
-final training and test-set evaluation. Figures are written to `outputs/figures/`
-and the grid-search table to `outputs/grid_search_results.csv`.
+final training and test-set evaluation. Figures are written to `outputs/figures/`.
 
 ## Files
 
-The notebook is **self-contained** — the configuration, data loading, feature
+The notebook is self-contained — the configuration, data loading, feature
 engineering, the KNN classifier, the grid search and every figure are all defined
-in its own cells. There are no project modules to open alongside it, so the code
-behind each output sits directly above that output.
+in its own cells.
 
 | File | Contents |
 |---|---|
@@ -68,10 +53,6 @@ behind each output sits directly above that output.
 | `outputs/` | Figures and the grid-search results table |
 
 ### Notebook layout
-
-Parts are numbered in the order they run, not in the order of the assignment brief —
-the search has to happen before the final model can be trained, because it chooses
-that model's settings. Each heading also names the assignment part it answers.
 
 | Part | Contents | Assignment |
 |---|---|---|
